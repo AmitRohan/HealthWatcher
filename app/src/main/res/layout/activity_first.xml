@@ -14,17 +14,21 @@
         tools:context="com.kruzr.preemptive.healthwatcher.First"
         android:weightSum="1">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:srcCompat="@mipmap/logo" />
+        android:layout_height="100dp"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.70" />
+        android:layout_weight="0.40" />
 
     <TextView
         android:id="@+id/tva"
