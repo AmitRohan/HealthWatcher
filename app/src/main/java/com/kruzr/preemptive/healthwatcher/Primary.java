@@ -45,48 +45,28 @@ public class Primary extends AppCompatActivity {
         HeartRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p=1;
-                Intent i = new Intent(v.getContext(),StartVitalSigns.class);
-                i.putExtra("Usr", user);
-                i.putExtra("Page", p);
-                startActivity(i);
-                finish();
+                startScannerActivity(1,v);
             }
         });
 
         BloodPressure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p=2;
-                Intent i = new Intent(v.getContext(),StartVitalSigns.class);
-                i.putExtra("Usr", user);
-                i.putExtra("Page", p);
-                startActivity(i);
-                finish();
+                startScannerActivity(2,v);
             }
         });
 
         RRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p=3;
-                Intent i = new Intent(v.getContext(),StartVitalSigns.class);
-                i.putExtra("Usr", user);
-                i.putExtra("Page", p);
-                startActivity(i);
-                finish();
+                startScannerActivity(3,v);
             }
         });
 
         Ox2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p=4;
-                Intent i = new Intent(v.getContext(),StartVitalSigns.class);
-                i.putExtra("Usr", user);
-                i.putExtra("Page", p);
-                startActivity(i);
-                finish();
+                startScannerActivity(4,v);
 
             }
         });
@@ -94,15 +74,20 @@ public class Primary extends AppCompatActivity {
         VitalSigns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                p=5;
-                Intent i = new Intent(v.getContext(),StartVitalSigns.class);
-                i.putExtra("Usr", user);
-                i.putExtra("Page", p);
-                startActivity(i);
-                finish();
+                startScannerActivity(5,v);
             }
         });
 
+    }
+
+
+    public void startScannerActivity(int page,View v){
+        p = page;
+        Intent i = new Intent(v.getContext(),StartVitalSigns.class);
+        i.putExtra("Usr", user);
+        i.putExtra("Page", page);
+        startActivity(i);
+        finish();
     }
 
     @Override
