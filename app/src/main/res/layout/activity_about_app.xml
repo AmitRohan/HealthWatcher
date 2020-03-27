@@ -29,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="89dp"
         android:fontFamily="cursive"
-        android:text="This Application was made as a graduation project at Princess Sumaya university for Technology by \n Yahya Odeh and Talal Kudmani"
+        android:text="This Application is built by \n Amit Rohan\n on top of a project by \n Yahya Odeh and Talal Kudmani"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
