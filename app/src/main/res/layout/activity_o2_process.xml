@@ -11,7 +11,7 @@
     android:background="@mipmap/bg4"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.yo7a.healthwatcher.O2Process">
+    tools:context="com.kruzr.preemptive.healthwatcher.O2Process">
 
     <SurfaceView
         android:id="@+id/preview"

@@ -11,7 +11,7 @@
         android:paddingTop="16dp"
         android:background="@mipmap/bg4"
         android:orientation="vertical"
-        tools:context="com.example.yo7a.healthwatcher.First"
+        tools:context="com.kruzr.preemptive.healthwatcher.First"
         android:weightSum="1">
 
 

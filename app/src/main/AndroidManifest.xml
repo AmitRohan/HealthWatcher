@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.yo7a.healthwatcher">
+    package="com.kruzr.preemptive.healthwatcher">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".First"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.First"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -26,54 +26,54 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Primary"
+            android:name="com.kruzr.preemptive.healthwatcher.Primary"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutApp"
+            android:name="com.kruzr.preemptive.healthwatcher.AboutApp"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".O2Result"
+            android:name="com.kruzr.preemptive.healthwatcher.O2Result"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BloodPressureResult"
+            android:name="com.kruzr.preemptive.healthwatcher.BloodPressureResult"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HeartRateResult"
+            android:name="com.kruzr.preemptive.healthwatcher.HeartRateResult"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RespirationResult"
+            android:name="com.kruzr.preemptive.healthwatcher.RespirationResult"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HeartRateProcess"
+            android:name="com.kruzr.preemptive.healthwatcher.HeartRateProcess"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BloodPressureProcess"
+            android:name="com.kruzr.preemptive.healthwatcher.BloodPressureProcess"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".O2Process"
+            android:name="com.kruzr.preemptive.healthwatcher.O2Process"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".Login"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.Login"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".RespirationProcess"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.RespirationProcess"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".StartVitalSigns"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.StartVitalSigns"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".VitalSignsProcess"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.VitalSignsProcess"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".VitalSignsResults"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.VitalSignsResults"
             android:configChanges="orientation"
             android:screenOrientation="portrait"></activity>
     </application>

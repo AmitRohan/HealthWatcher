@@ -9,7 +9,7 @@
     android:background="@mipmap/bg4"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.yo7a.healthwatcher.VitalSignsProcess"
+    tools:context="com.kruzr.preemptive.healthwatcher.VitalSignsProcess"
     android:weightSum="1">
 
 

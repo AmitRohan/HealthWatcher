@@ -11,7 +11,7 @@
     android:background="@mipmap/bg4"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.yo7a.healthwatcher.BloodPressureProcess">
+    tools:context="com.kruzr.preemptive.healthwatcher.BloodPressureProcess">
 
 
     <SurfaceView

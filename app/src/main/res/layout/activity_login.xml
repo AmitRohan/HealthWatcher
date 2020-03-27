@@ -17,7 +17,7 @@
     android:paddingTop="16dp"
     android:background="@mipmap/bg4"
     android:orientation="vertical"
-    tools:context="com.example.yo7a.healthwatcher.Login"
+    tools:context="com.kruzr.preemptive.healthwatcher.Login"
     android:weightSum="1">
 
 

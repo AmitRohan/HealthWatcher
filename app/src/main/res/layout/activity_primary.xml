@@ -9,7 +9,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.yo7a.healthwatcher.Primary"
+    tools:context="com.kruzr.preemptive.healthwatcher.Primary"
     android:background="@mipmap/bg4"
     android:orientation="vertical"
     android:gravity="center"
