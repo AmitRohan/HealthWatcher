@@ -75,5 +75,30 @@
         android:scaleType="fitEnd"
         app:srcCompat="@mipmap/ab" />
 
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Use app in a dark environment for best results."
+        />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Area near camera might become warm. be carefull."
+        />
+
+
 
 </LinearLayout>
