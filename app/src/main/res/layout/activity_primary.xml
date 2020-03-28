@@ -31,22 +31,23 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:visibility="gone"
         app:srcCompat="@mipmap/hr1" />
 
     <ImageButton
-        android:visibility="gone"
         android:id="@+id/RR"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:visibility="gone"
         app:srcCompat="@mipmap/rr1" />
 
     <ImageButton
-        android:visibility="gone"
         android:id="@+id/BP"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:visibility="gone"
         app:srcCompat="@mipmap/bp1" />
 
     <ImageButton
@@ -54,14 +55,15 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:visibility="gone"
         app:srcCompat="@mipmap/or1" />
 
     <ImageButton
-        android:visibility="gone"
         android:id="@+id/VS"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:visibility="visible"
         app:srcCompat="@mipmap/avs" />
 
     <ImageButton

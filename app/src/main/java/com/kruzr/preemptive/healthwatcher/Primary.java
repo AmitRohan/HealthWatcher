@@ -34,7 +34,8 @@ public class Primary extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            user = extras.getString("Usr");
+            user = "Test" ;
+//            extras.getString("Usr");
             //The key argument here must match that used in the other activity
         }
 
