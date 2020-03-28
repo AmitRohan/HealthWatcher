@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name="com.kruzr.preemptive.healthwatcher.First"
+        <activity android:name="com.kruzr.preemptive.healthwatcher.Primary"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kruzr.preemptive.healthwatcher.Primary"
+            android:name="com.kruzr.preemptive.healthwatcher.Login"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
