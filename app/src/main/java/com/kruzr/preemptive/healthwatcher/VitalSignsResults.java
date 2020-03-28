@@ -18,7 +18,7 @@ public class VitalSignsResults extends AppCompatActivity {
     private String user,Date;
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
     Date today = Calendar.getInstance().getTime();
-    int VBP1,VBP2,VRR,VHR,VO2;
+    int VBP1,VBP2,VHR,VO2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,24 +26,37 @@ public class VitalSignsResults extends AppCompatActivity {
         setContentView(R.layout.activity_vital_signs_results);
 
         Date = df.format(today);
-        TextView VSRR = (TextView) this.findViewById(R.id.RRV);
         TextView VSBPS = (TextView) this.findViewById(R.id.BP2V);
         TextView VSHR = (TextView) this.findViewById(R.id.HRV);
         TextView VSO2 = (TextView) this.findViewById(R.id.O2V);
+        TextView Vdiagnosis = (TextView) this.findViewById(R.id.diagnosis);
+
         ImageButton All = (ImageButton)this.findViewById(R.id.SendAll);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            VRR = bundle.getInt("breath");
             VHR = bundle.getInt("bpm");
             VBP1 = bundle.getInt("SP");
             VBP2 = bundle.getInt("DP");
             VO2 = bundle.getInt("O2R");
-            user = bundle.getString("Usr");
-            VSRR.setText(String.valueOf(VRR));
             VSHR.setText(String.valueOf(VHR));
             VSBPS.setText(String.valueOf(VBP1+" / "+VBP2));
             VSO2.setText(String.valueOf(VO2));
+
+
+            String healthCondition = "";
+             if(VO2 < 93){
+                healthCondition = "High risk for Pneumonia and ARDS. consult doctor immediately.";
+            } else if(VHR > 92 && VO2 < 95){
+                 healthCondition = "Mild Conditions for Pneumonia and ARDS. Should get a checkup done";
+             } else if(VO2 < 95){
+                 healthCondition = "Running low on oxygen, might develop ARDS. Should get a checkup done";
+             } else if(VHR < 60 || VHR > 90){
+                 healthCondition = "Abnormal heart rate. Take some rest and check in 15 minutes.";
+             } else {
+                Vdiagnosis.setVisibility(View.GONE);
+            }
+            Vdiagnosis.setText(healthCondition);
         }
 
         All.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +66,7 @@ public class VitalSignsResults extends AppCompatActivity {
                 i.setType("message/rfc822");
                 i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
                 i.putExtra(Intent.EXTRA_SUBJECT, "Health Watcher");
-                i.putExtra(Intent.EXTRA_TEXT   , user+"'s new measuerment "+"\n"+" at "+ Date +" are :"+"\n"+"Heart Rate = "+VHR+"\n"+"Blood Pressure = "+VBP1+" / "+VBP2+"\n"+"Respiration Rate = "+VRR+"\n"+"Oxygen Saturation = "+VO2);
+                i.putExtra(Intent.EXTRA_TEXT   , "My new measuerment "+"\n"+" at "+ Date +" are :"+"\n"+"Heart Rate = "+VHR+"\n"+"Blood Pressure = "+VBP1+" / "+VBP2+"\n"+"Oxygen Saturation = "+VO2);
                 try {
                     startActivity(Intent.createChooser(i, "Send mail..."));
                 } catch (android.content.ActivityNotFoundException ex) {

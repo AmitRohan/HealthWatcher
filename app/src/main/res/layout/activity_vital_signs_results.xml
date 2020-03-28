@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="0dp"
         android:layout_weight="0.72"
         android:gravity="center"
         android:orientation="horizontal">
@@ -54,9 +54,14 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/hrbar" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -119,38 +124,25 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ro2" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/rrl" />
-
-            <TextView
-                android:id="@+id/RRV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
-                android:background="@android:color/transparent"
-                android:text=""
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/rrr" />
-
         </LinearLayout>
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/diagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
 
     <Space
         android:layout_width="match_parent"
