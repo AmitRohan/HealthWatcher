@@ -58,10 +58,6 @@ public class VitalSignsProcess extends AppCompatActivity {
     double sumred=0;
     double sumblue=0;
 
-    //RR variable
-    public int Breath=0;
-    public double bufferAvgBr=0;
-
     //BloodPressure variables
     public double Gen,Agg,Hei,Wei;
     public double Q =4.5;
@@ -215,12 +211,6 @@ public class VitalSignsProcess extends AppCompatActivity {
                 double HR1Freq = Fft.FFT(Red, counter, SamplingFreq);
                 double bpm1=(int)ceil(HR1Freq*60);
 
-                //sending the rg arrays with the counter to make an fft process then a bandpass filter to get the respiration rate out of it
-                double RRFreq = Fft2.FFT(Green, counter, SamplingFreq);
-                double breath=(int)ceil(RRFreq*60);
-                double RR1Freq = Fft2.FFT(Red, counter, SamplingFreq);
-                double breath1=(int)ceil(RR1Freq*60);
-
                 //calculating the mean of red and blue intensities on the whole period of recording
                 double meanr = sumred/counter;
                 double meanb = sumblue/counter;
@@ -252,29 +242,25 @@ public class VitalSignsProcess extends AppCompatActivity {
                 o2 =(int) (spo2);
 
 
-                //comparing if heartbeat and Respiration rate are reasonable from the green and red intensities then take the average, otherwise value from green or red intensity if one of them is good and other is bad.
-                if((bpm > 45 || bpm < 200)|| (breath > 10 || breath < 20))
+                //comparing if heartbeat is reasonable from the green and red intensities then take the average, otherwise value from green or red intensity if one of them is good and other is bad.
+                if((bpm > 45 || bpm < 200))
                 {
-                    if((bpm1 > 45 || bpm1 < 200)|| (breath1 > 10 || breath1 < 24)) {
+                    if((bpm1 > 45 || bpm1 < 200)) {
 
                         bufferAvgB = (bpm+bpm1)/2;
-                        bufferAvgBr = (breath+breath1)/2;
-
                     }
                     else{
                         bufferAvgB = bpm;
-                        bufferAvgBr = breath;
                     }
                 }
-                else if((bpm1 > 45 || bpm1 < 200)|| (breath1 > 10 || breath1 < 20)){
+                else if((bpm1 > 45 || bpm1 < 200)){
 
                     bufferAvgB = bpm1;
-                    bufferAvgBr = breath1;
 
                 }
 
                 //if the values of hr and o2 are not reasonable then show a toast that measurement failed and restart the progress bar and the whole recording process for another 30 seconds
-                if ((bufferAvgB < 45 || bufferAvgB > 200)|| (bufferAvgBr < 10 || bufferAvgBr > 24)) {
+                if ((bufferAvgB < 45 || bufferAvgB > 200)) {
                     inc=0;
                     ProgP=inc;
                     ProgHeart.setProgress(ProgP);
@@ -287,7 +273,6 @@ public class VitalSignsProcess extends AppCompatActivity {
                 }
 
                 Beats=(int)bufferAvgB;
-                Breath=(int)bufferAvgBr;
 
                 //estimations to estimate the blood pressure
                 double ROB = 18.5;
@@ -302,10 +287,9 @@ public class VitalSignsProcess extends AppCompatActivity {
             }
 
             //if all those variable contains a valid values then swap them to results activity and finish the processing activity
-            if((Beats != 0) && (SP != 0) && (DP != 0) && (o2 != 0) && (Breath != 0 ) ){
+            if((Beats != 0) && (SP != 0) && (DP != 0) && (o2 != 0) ){
                 Intent i=new Intent(VitalSignsProcess.this,VitalSignsResults.class);
                 i.putExtra("O2R", o2);
-                i.putExtra("breath", Breath);
                 i.putExtra("bpm", Beats);
                 i.putExtra("SP", SP);
                 i.putExtra("DP", DP);
