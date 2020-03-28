@@ -27,10 +27,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kruzr.preemptive.healthwatcher.Login"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.kruzr.preemptive.healthwatcher.AboutApp"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
