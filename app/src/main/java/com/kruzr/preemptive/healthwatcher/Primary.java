@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -145,6 +146,11 @@ public class Primary extends AppCompatActivity {
         if(requestCode == MY_PERMISSIONS_REQUEST_READ_CAMERA && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             Toast.makeText(getBaseContext(),"You can now press again.",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void openGithub(View view) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/AmitRohan/HealthWatcher"));
+        startActivity(browserIntent);
     }
 }
 
